@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="E:\apache-maven-3.3.3\repo\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar" />
+	<context id="fun">
+		<plugin type="org.mybatis.generator.plugins.AddLimitOffsetPlugin" />
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/fun" userId="root"
+			password="123" />
+		<javaModelGenerator targetPackage="com.next.db.model"
+			targetProject="mybatisDemo/src/main/java/" />
+		<sqlMapGenerator targetPackage="com.next.db.mapper"
+			targetProject="mybatisDemo/src/main/java/" />
+		<javaClientGenerator targetPackage="com.next.db.mapper"
+			targetProject="mybatisDemo/src/main/java/" type="XMLMAPPER" />
+		
+		<table schema="fun" tableName="funproduct" domainObjectName="FunProduct">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		
+<!-- 		<table schema="fun" tableName="funorder" domainObjectName="FunOrder"> -->
+<!-- 			<property name="useActualColumnNames" value="true" /> -->
+<!-- 			<generatedKey column="id" sqlStatement="MySql" identity="true" /> -->
+<!-- 		</table> -->
+
+<!-- 		<table schema="fun" tableName="funorderitem" domainObjectName="FunOrderItem"> -->
+<!-- 			<property name="useActualColumnNames" value="true" /> -->
+<!-- 			<generatedKey column="id" sqlStatement="MySql" identity="true" /> -->
+<!-- 		</table> -->
+	</context>
+</generatorConfiguration>
